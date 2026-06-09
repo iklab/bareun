@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>사용자 매뉴얼 — BP 시프트 관리</title>
   <style>
 /* BP 시프트 관리 - 사용자 매뉴얼 공통 스타일 */
@@ -369,72 +369,66 @@ kbd {
 }
 
 
-  /* ── 모바일 상단바 ── */
-  .mobile-topbar {
-    display: none;
-    position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-    height: 52px; background: #1e2a3a;
-    align-items: center; justify-content: space-between;
-    padding: 0 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
-  .mobile-topbar-brand { font-size: 14px; font-weight: 700; color: #fff; }
-  .mobile-topbar-brand span { color: #409eff; }
-  .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+/* ── 페이지 섹션 ── */
+.page-section { display: none; }
+.page-section.active { display: block; }
 
-  /* ── 드로어 ── */
-  .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 400; }
-  .drawer-overlay.open { display: block; }
-  .drawer {
-    position: fixed; top: 0; left: -260px; width: 240px; height: 100vh;
-    background: #fff; border-right: 1px solid #e8edf2;
-    z-index: 500; overflow-y: auto;
-    transition: left 0.25s ease;
-    padding: 0 0 40px;
-  }
-  .drawer.open { left: 0; }
-  .drawer .drawer-header {
-    background: #1e2a3a; padding: 14px 16px;
-    display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 1;
-  }
-  .drawer .drawer-header span { color: #fff; font-size: 13px; font-weight: 700; }
-  .drawer-close { background: none; border: none; color: #9eb0c8; font-size: 18px; cursor: pointer; line-height: 1; padding: 0; }
-  .drawer .nav-title { font-size: 11px; font-weight: 700; color: #9eb0c8; text-transform: uppercase; letter-spacing: 0.8px; padding: 16px 20px 6px; }
-  .drawer a { display: flex; align-items: center; gap: 8px; padding: 10px 20px; color: #606266; text-decoration: none; font-size: 13.5px; border-left: 3px solid transparent; }
-  .drawer a:hover { background: #f5f7fa; color: #1e2a3a; }
-  .drawer a.active { background: #ecf5ff; color: #409eff; font-weight: 600; border-left-color: #409eff; }
-  .drawer a .nav-num { font-size: 11px; color: #c0c4cc; font-weight: 600; min-width: 18px; }
-  .drawer a.active .nav-num { color: #409eff; }
-  .drawer .nav-sep { height: 1px; background: #f0f2f5; margin: 10px 20px; }
+/* ── 스크린샷 placeholder ── */
+.screenshot-placeholder {
+  width:100%; padding:40px 20px; background:#f5f7fa;
+  border:1px dashed #c0c4cc; border-radius:8px;
+  text-align:center; color:#909399; font-size:14px; margin:14px 0;
+}
 
-  /* ── 페이지 섹션 show/hide ── */
-  .page-section { display: none; }
-  .page-section.active { display: block; }
+/* ── 모바일 상단바 ── */
+.mobile-topbar {
+  display:none; position:fixed; top:0; left:0; right:0; z-index:300;
+  height:52px; background:#1e2a3a;
+  align-items:center; justify-content:space-between; padding:0 16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+.mobile-topbar-brand { font-size:14px; font-weight:700; color:#fff; }
+.mobile-topbar-brand span { color:#409eff; }
+.hamburger { background:none; border:none; cursor:pointer; padding:6px; display:flex; flex-direction:column; gap:5px; }
+.hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
 
-  /* ── 스크린샷 placeholder ── */
-  .screenshot-placeholder {
-    width: 100%; padding: 40px 20px; background: #f5f7fa; border: 1px dashed #c0c4cc;
-    border-radius: 8px; text-align: center; color: #909399; font-size: 14px;
-    margin: 14px 0;
-  }
+/* ── 드로어 ── */
+.drawer-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:400; }
+.drawer-overlay.open { display:block; }
+.drawer {
+  position:fixed; top:0; left:-260px; width:240px; height:100vh;
+  background:#fff; border-right:1px solid #e8edf2;
+  z-index:500; overflow-y:auto; transition:left .25s ease; padding-bottom:40px;
+}
+.drawer.open { left:0; }
+.drawer-head {
+  background:#1e2a3a; padding:14px 16px; position:sticky; top:0; z-index:1;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.drawer-head span { color:#fff; font-size:13px; font-weight:700; }
+.drawer-close { background:none; border:none; color:#9eb0c8; font-size:18px; cursor:pointer; line-height:1; }
+.drawer .nav-title { font-size:11px; font-weight:700; color:#9eb0c8; text-transform:uppercase; letter-spacing:.8px; padding:16px 20px 6px; }
+.drawer a { display:flex; align-items:center; gap:8px; padding:10px 20px; color:#606266; text-decoration:none; font-size:13.5px; border-left:3px solid transparent; }
+.drawer a:hover { background:#f5f7fa; color:#1e2a3a; }
+.drawer a.active { background:#ecf5ff; color:#409eff; font-weight:600; border-left-color:#409eff; }
+.drawer a .nav-num { font-size:11px; color:#c0c4cc; font-weight:600; min-width:18px; }
+.drawer a.active .nav-num { color:#409eff; }
+.drawer .nav-sep { height:1px; background:#f0f2f5; margin:10px 20px; }
 
-  /* ── 모바일 반응형 ── */
-  @media (max-width: 900px) {
-    .top-bar { display: none; }
-    .side-nav { display: none; }
-    .main-content { margin-left: 0; }
-    .mobile-topbar { display: flex; }
-    .layout { padding-top: 52px; }
-    .page-hero { padding: 28px 20px; }
-    .page-wrap { padding: 20px 16px 60px; }
-    .page-hero h1 { font-size: 22px; }
-    .index-grid { grid-template-columns: 1fr; }
-    .page-nav { flex-direction: column; }
-    .page-nav a { flex: none; }
-  }
-
+/* ── 모바일 반응형 ── */
+@media (max-width:900px) {
+  .top-bar { display:none; }
+  .side-nav { display:none; }
+  .main-content { margin-left:0; }
+  .mobile-topbar { display:flex; }
+  .layout { padding-top:52px; }
+  .page-hero { padding:28px 20px; }
+  .page-wrap { padding:20px 16px 60px; }
+  .page-hero h1 { font-size:22px; }
+  .index-grid { grid-template-columns:1fr; }
+  .page-nav { flex-direction:column; }
+  .page-nav a { flex:none; }
+}
   </style>
 </head>
 <body>
@@ -442,30 +436,28 @@ kbd {
 <!-- 모바일 상단바 -->
 <div class="mobile-topbar">
   <span class="mobile-topbar-brand">BP <span>시프트 관리</span> 매뉴얼</span>
-  <button class="hamburger" onclick="toggleDrawer()" aria-label="메뉴">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
 </div>
 
 <!-- 드로어 오버레이 -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
 
-<!-- 드로어 (모바일 사이드바) -->
+<!-- 드로어 -->
 <div class="drawer" id="drawer">
-  <div class="drawer-header">
+  <div class="drawer-head">
     <span>매뉴얼 목차</span>
     <button class="drawer-close" onclick="closeDrawer()">✕</button>
   </div>
   <div class="nav-title">목차</div>
-  <a href="#" id="dnav-index" onclick="showFromDrawer('index','dnav-index');return false;"><span class="nav-num">🏠</span> 홈 / 목차</a>
+  <a href="#" id="dnav-index"  onclick="showFromDrawer('index','dnav-index');return false;"><span class="nav-num">🏠</span> 홈 / 목차</a>
 <div class="nav-sep"></div>
-<a href="#" id="dnav-p01" onclick="showFromDrawer('p01','dnav-p01');return false;"><span class="nav-num">01</span> 시스템 개요 &amp; 로그인</a>
-<a href="#" id="dnav-p02" onclick="showFromDrawer('p02','dnav-p02');return false;"><span class="nav-num">02</span> 직원 관리</a>
-<a href="#" id="dnav-p03" onclick="showFromDrawer('p03','dnav-p03');return false;"><span class="nav-num">03</span> 근무 관리</a>
-<a href="#" id="dnav-p04" onclick="showFromDrawer('p04','dnav-p04');return false;"><span class="nav-num">04</span> 주별 근무표</a>
-<a href="#" id="dnav-p05" onclick="showFromDrawer('p05','dnav-p05');return false;"><span class="nav-num">05</span> 근무요약</a>
-<a href="#" id="dnav-p06" onclick="showFromDrawer('p06','dnav-p06');return false;"><span class="nav-num">06</span> 일용직 근무표</a>
-<a href="#" id="dnav-p07" onclick="showFromDrawer('p07','dnav-p07');return false;"><span class="nav-num">07</span> 엑셀 다운로드 가이드</a>
+<a href="#" id="dnav-p01"  onclick="showFromDrawer('p01','dnav-p01');return false;"><span class="nav-num">01</span> 시스템 개요 &amp; 로그인</a>
+<a href="#" id="dnav-p02"  onclick="showFromDrawer('p02','dnav-p02');return false;"><span class="nav-num">02</span> 직원 관리</a>
+<a href="#" id="dnav-p03"  onclick="showFromDrawer('p03','dnav-p03');return false;"><span class="nav-num">03</span> 근무 관리</a>
+<a href="#" id="dnav-p04"  onclick="showFromDrawer('p04','dnav-p04');return false;"><span class="nav-num">04</span> 주별 근무표</a>
+<a href="#" id="dnav-p05"  onclick="showFromDrawer('p05','dnav-p05');return false;"><span class="nav-num">05</span> 근무요약</a>
+<a href="#" id="dnav-p06"  onclick="showFromDrawer('p06','dnav-p06');return false;"><span class="nav-num">06</span> 일용직 근무표</a>
+<a href="#" id="dnav-p07"  onclick="showFromDrawer('p07','dnav-p07');return false;"><span class="nav-num">07</span> 엑셀 다운로드 가이드</a>
 
 </div>
 
@@ -479,15 +471,15 @@ kbd {
   <!-- 데스크탑 사이드바 -->
   <nav class="side-nav">
     <div class="nav-title">매뉴얼 목차</div>
-    <a href="#" id="nav-index" onclick="navTo('index');return false;"><span class="nav-num">🏠</span> 홈 / 목차</a>
+    <a href="#" id="nav-index"   onclick="navTo('index');return false;"><span class="nav-num">🏠</span> 홈 / 목차</a>
 <div class="nav-sep"></div>
-<a href="#" id="nav-p01" onclick="navTo('p01');return false;"><span class="nav-num">01</span> 시스템 개요 &amp; 로그인</a>
-<a href="#" id="nav-p02" onclick="navTo('p02');return false;"><span class="nav-num">02</span> 직원 관리</a>
-<a href="#" id="nav-p03" onclick="navTo('p03');return false;"><span class="nav-num">03</span> 근무 관리</a>
-<a href="#" id="nav-p04" onclick="navTo('p04');return false;"><span class="nav-num">04</span> 주별 근무표</a>
-<a href="#" id="nav-p05" onclick="navTo('p05');return false;"><span class="nav-num">05</span> 근무요약</a>
-<a href="#" id="nav-p06" onclick="navTo('p06');return false;"><span class="nav-num">06</span> 일용직 근무표</a>
-<a href="#" id="nav-p07" onclick="navTo('p07');return false;"><span class="nav-num">07</span> 엑셀 다운로드 가이드</a>
+<a href="#" id="nav-p01"   onclick="navTo('p01');return false;"><span class="nav-num">01</span> 시스템 개요 &amp; 로그인</a>
+<a href="#" id="nav-p02"   onclick="navTo('p02');return false;"><span class="nav-num">02</span> 직원 관리</a>
+<a href="#" id="nav-p03"   onclick="navTo('p03');return false;"><span class="nav-num">03</span> 근무 관리</a>
+<a href="#" id="nav-p04"   onclick="navTo('p04');return false;"><span class="nav-num">04</span> 주별 근무표</a>
+<a href="#" id="nav-p05"   onclick="navTo('p05');return false;"><span class="nav-num">05</span> 근무요약</a>
+<a href="#" id="nav-p06"   onclick="navTo('p06');return false;"><span class="nav-num">06</span> 일용직 근무표</a>
+<a href="#" id="nav-p07"   onclick="navTo('p07');return false;"><span class="nav-num">07</span> 엑셀 다운로드 가이드</a>
 
   </nav>
 
@@ -506,49 +498,49 @@ kbd {
         <h2><span class="icon">📋</span> 목차</h2>
         <div class="index-grid">
 
-          <a class="index-item" href="01-overview.html">
+          <a class="index-item" href="#" onclick="navTo('p01');return false;">
             <span class="icon-big">🔑</span>
             <div class="num">01</div>
             <h3>시스템 개요 &amp; 로그인</h3>
             <p>화면 구성, 로그인 방법, 기본 사용법 안내</p>
           </a>
 
-          <a class="index-item" href="02-emp-management.html">
+          <a class="index-item" href="#" onclick="navTo('p02');return false;">
             <span class="icon-big">👥</span>
             <div class="num">02</div>
             <h3>직원 관리</h3>
             <p>직원 등록·수정·삭제, 직무·시급·계좌·보건증 관리</p>
           </a>
 
-          <a class="index-item" href="03-shift-management.html">
+          <a class="index-item" href="#" onclick="navTo('p03');return false;">
             <span class="icon-big">⏰</span>
             <div class="num">03</div>
             <h3>근무 관리</h3>
             <p>요일별 근무 패턴 등록, 근무1/2, 휴게 시간, 필드, 적용 기간 설정</p>
           </a>
 
-          <a class="index-item" href="04-shift-table.html">
+          <a class="index-item" href="#" onclick="navTo('p04');return false;">
             <span class="icon-big">📅</span>
             <div class="num">04</div>
             <h3>주별 근무표</h3>
             <p>주차별 시간대 근무 현황 조회, 결근 처리, 비고 수정, 엑셀 다운로드</p>
           </a>
 
-          <a class="index-item" href="05-summary.html">
+          <a class="index-item" href="#" onclick="navTo('p05');return false;">
             <span class="icon-big">📊</span>
             <div class="num">05</div>
             <h3>근무요약</h3>
             <p>월별 근무일수·시간·급여 집계, 통합 엑셀 다운로드</p>
           </a>
 
-          <a class="index-item" href="06-daily-worker.html">
+          <a class="index-item" href="#" onclick="navTo('p06');return false;">
             <span class="icon-big">🗓️</span>
             <div class="num">06</div>
             <h3>일용직 근무표</h3>
             <p>일용직 등록·근무 입력, 현금지급 처리, 엑셀 다운로드</p>
           </a>
 
-          <a class="index-item" href="07-excel-guide.html">
+          <a class="index-item" href="#" onclick="navTo('p07');return false;">
             <span class="icon-big">📄</span>
             <div class="num">07</div>
             <h3>엑셀 다운로드 가이드</h3>
@@ -569,6 +561,8 @@ kbd {
           <li>일용직이 있다면 <strong>일용직 근무표</strong>에서 별도로 관리합니다.</li>
         </ol>
       </div>
+
+    </div>
 </div>
 
 <div id="sec-p01" class="page-section">
@@ -657,6 +651,8 @@ kbd {
           <div class="title">직원 관리</div>
         </a>
       </div>
+
+    </div>
 </div>
 
 <div id="sec-p02" class="page-section">
@@ -759,6 +755,8 @@ kbd {
           <div class="title">근무 관리</div>
         </a>
       </div>
+
+    </div>
 </div>
 
 <div id="sec-p03" class="page-section">
@@ -884,6 +882,8 @@ kbd {
           <div class="title">주별 근무표</div>
         </a>
       </div>
+
+    </div>
 </div>
 
 <div id="sec-p04" class="page-section">
@@ -1031,6 +1031,8 @@ kbd {
           <div class="title">근무요약</div>
         </a>
       </div>
+
+    </div>
 </div>
 
 <div id="sec-p05" class="page-section">
@@ -1133,6 +1135,8 @@ kbd {
           <div class="title">일용직 근무표</div>
         </a>
       </div>
+
+    </div>
 </div>
 
 <div id="sec-p06" class="page-section">
@@ -1252,6 +1256,8 @@ kbd {
           <div class="title">엑셀 다운로드 가이드</div>
         </a>
       </div>
+
+    </div>
 </div>
 
 <div id="sec-p07" class="page-section">
@@ -1373,15 +1379,16 @@ kbd {
           <div class="title">매뉴얼 홈</div>
         </a>
       </div>
+
+    </div>
 </div>
 
 
   </div>
 </div>
 
-
 <script>
-const PAGE_IDS = ['index','p01','p02','p03','p04','p05','p06','p07'];
+const PAGE_IDS = ['index', 'p01', 'p02', 'p03', 'p04', 'p05', 'p06', 'p07'];
 
 function navTo(id) {
   PAGE_IDS.forEach(pid => {
@@ -1397,7 +1404,7 @@ function showFromDrawer(id, did) {
   navTo(id);
   PAGE_IDS.forEach(pid => {
     const dn = document.getElementById('dnav-' + pid);
-    if (dn) dn.classList.toggle('active', ('dnav-' + pid) === did);
+    if (dn) dn.classList.toggle('active', 'dnav-' + pid === did);
   });
   closeDrawer();
 }
@@ -1411,6 +1418,5 @@ function closeDrawer() {
   document.getElementById('drawerOverlay').classList.remove('open');
 }
 </script>
-
 </body>
 </html>
